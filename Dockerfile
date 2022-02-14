@@ -1,5 +1,5 @@
 FROM docker.io/library/alpine:latest
-RUN apk update && apk add nginx && mkdir -p /run/nginx && apk add curl shadow
+RUN apk update && apk add nginx && mkdir -p /run/nginx && apk add curl shadow bind-tools tcpdump
 EXPOSE 80
 COPY default.conf  /etc/nginx/conf.d/
 CMD ["nginx", "-g", "daemon off;"]
